@@ -24,13 +24,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetButton("Horizontal"))
         {
-            Vector3 move = Input.GetAxis("Horizontal") * Vector3.right;
+            Vector3 move = Input.GetAxis("Horizontal") * transform.right;
             controller.Move(move * speed * Time.deltaTime);
         }
 
         if (Input.GetButton("Vertical"))
         {
-            Vector3 move = Input.GetAxis("Vertical") * Vector3.forward;
+            Vector3 move = Input.GetAxis("Vertical") * transform.forward;
             controller.Move(move * speed * Time.deltaTime);
         }
     }
