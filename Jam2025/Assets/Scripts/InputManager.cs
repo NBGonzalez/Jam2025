@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private Player player;
+    [SerializeField] public Player player;
     public Animator animator;
     public Animator ambientAnimator;
     public bool timeChange = false;
@@ -21,12 +21,23 @@ public class InputManager : MonoBehaviour
         timer += Time.deltaTime;
         if (Input.GetButtonDown("Fire1") && timer >= 1f)
         {
+            
             timer = 0f;
             animator.SetTrigger("Time");
             ambientAnimator.SetTrigger("Time");
             player.DisablePlayer();
             player = player.otherPlayer;
             player.EnablePlayer();
+            gameManager.Instance.ChangeTimeLine();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (gameManager.Instance.currentItem == null) return;
+
+            if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past) gameManager.Instance.currentItem.InteractPast();
+
+            else gameManager.Instance.currentItem.InteractPresent();
         }
     }
 }

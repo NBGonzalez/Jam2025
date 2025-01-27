@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioListener listener;
     public bool controllPlayer = false;
     public Player otherPlayer;
+    public Transform hand;
 
     [Header("Animaciones")]
     private Animator animator;
