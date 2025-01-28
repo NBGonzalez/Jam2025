@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -385,6 +385,8 @@ MonoBehaviour:
   onInteractionPresent:
     m_PersistentCalls:
       m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
   otherInteractable: {fileID: 0}
   onInteraction:
     m_PersistentCalls:
@@ -793,6 +795,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  pastSprite: {fileID: 21300000, guid: 96008f0eb4538f74884c00e0ef292d90, type: 3}
+  presentSprite: {fileID: 21300000, guid: bf0a0bda0fb132747ac1ac8cd2508ead, type: 3}
   otherInteractable: {fileID: 663967623}
   onInteraction:
     m_PersistentCalls:
@@ -1191,8 +1195,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: 
   itemName: 
-  pastPrefab: {fileID: 0}
-  presentPrefab: {fileID: 0}
+  pastPrefab: {fileID: 463245247}
+  presentPrefab: {fileID: 554712487}
   itemPos: {x: 0, y: 0, z: 0}
   onInteractionPast:
     m_PersistentCalls:
@@ -1200,10 +1204,24 @@ MonoBehaviour:
   onInteractionPresent:
     m_PersistentCalls:
       m_Calls: []
+  pastSprite: {fileID: 21300000, guid: bf0a0bda0fb132747ac1ac8cd2508ead, type: 3}
+  presentSprite: {fileID: 21300000, guid: 96008f0eb4538f74884c00e0ef292d90, type: 3}
   otherInteractable: {fileID: 0}
   onInteraction:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 590414568}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &663967621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1263,6 +1281,8 @@ MonoBehaviour:
   onInteractionPresent:
     m_PersistentCalls:
       m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
   otherInteractable: {fileID: 0}
   onInteraction:
     m_PersistentCalls:
@@ -1388,6 +1408,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1363182684}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &697636518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1636540756085581671, guid: 7e082d2676e96724ea18257713ea8657,
+    type: 3}
+  m_PrefabInstance: {fileID: 5726755624959736796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852681be09ad8f14aa7a18cbcb4ced49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &698655722 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9146395612310211541, guid: bd2f74d1ebe19714eab073445f8f9f01,
@@ -3023,6 +3055,8 @@ MonoBehaviour:
   onInteractionPresent:
     m_PersistentCalls:
       m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
   otherInteractable: {fileID: 0}
   onInteraction:
     m_PersistentCalls:
@@ -4266,6 +4300,8 @@ MonoBehaviour:
   onInteractionPresent:
     m_PersistentCalls:
       m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
   otherInteractable: {fileID: 0}
   onInteraction:
     m_PersistentCalls:
@@ -4683,6 +4719,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1337901650806109609, guid: c57f669e054929342b83cd6939aed03d,
+        type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 697636518}
     - target: {fileID: 1337901650806109609, guid: c57f669e054929342b83cd6939aed03d,
         type: 3}
       propertyPath: inputManager
