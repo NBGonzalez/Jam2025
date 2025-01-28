@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -9,10 +10,25 @@ public class DialogueManager : MonoBehaviour
     public string[] Sentences;
     private int index = 0;
     public float DialogueSpeed;
+    [SerializeField] private Sprite mouse;
+    [SerializeField] private Sprite interactionMouse;
+    [SerializeField] private Image mouseImage;
+    private bool normalMouse = true;
 
     // Start is called before the first frame update
+
+    private static DialogueManager instance;
+
+    public static DialogueManager Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
     void Start()
     {
+        instance = this;
         StartDialogue();
     }
 
@@ -66,5 +82,19 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(DialogueSpeed);
         }
         //index++;
+    }
+
+    public static void SetInteractionMouse()
+    {
+        if (!instance.normalMouse) return;
+        instance.mouseImage.sprite = instance.interactionMouse;
+        instance.normalMouse = false;
+    }
+
+    public static void SetNormalMouse()
+    {
+        if (instance.normalMouse) return;
+        instance.mouseImage.sprite = instance.mouse;
+        instance.normalMouse = true;
     }
 }

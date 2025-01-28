@@ -22,6 +22,8 @@ public class Player : MonoBehaviour
     public Player otherPlayer;
     public Transform hand;
 
+
+
     [Header("Animaciones")]
     private Animator animator;
     private bool movement = false;
@@ -130,6 +132,7 @@ public class Player : MonoBehaviour
     private void SetNewCurrentInteractable(Interactable newInteractable)
     {
         currentInteractable = newInteractable;
+        DialogueManager.SetInteractionMouse();
         currentInteractable.EnableOutline();
         //HUDController.instance.EnableInteractionText(currentInteractable.message);
     }
@@ -138,6 +141,7 @@ public class Player : MonoBehaviour
     {
         //HUDController.instance.DisableInteractionText();
         if (currentInteractable == null) return;
+        DialogueManager.SetNormalMouse();
         currentInteractable.DisableOutline();
         currentInteractable = null;
     }
