@@ -9,11 +9,15 @@ public class MouseParralax : MonoBehaviour
     [SerializeField] private float MouseSpeedY = 0.2f;
     private Vector3[] OriginalPositions;
 
+    [SerializeField] Camera mainCamera;
+    private Vector3 OriginalPositionCamera;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined; // cursor can't leave the area
 
         OriginalPositions = new Vector3[ParallaxElements.Length]; //initialize array lenght
+        OriginalPositionCamera = mainCamera.transform.position;
 
         for ( int i = 0; i< ParallaxElements.Length;i++)
         {
@@ -35,6 +39,8 @@ public class MouseParralax : MonoBehaviour
             ParallaxElements[i-1].transform.position = OriginalPositions[i-1] + (new Vector3(mousex, mousey,0f)); 
             // set position with corresponding offset
         }
+
+        mainCamera.transform.position = OriginalPositionCamera + (new Vector3(mousex, mousey, 0f));
 
     }
 
