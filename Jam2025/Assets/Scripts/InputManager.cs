@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
     public Animator ambientAnimator;
     public bool timeChange = false;
     public float timer = 5f;
+    public float wheeltimer = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class InputManager : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        wheeltimer += Time.deltaTime;
         if (Input.GetButtonDown("Fire1") && timer >= 1f)
         {
             
@@ -38,6 +40,19 @@ public class InputManager : MonoBehaviour
             if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past) gameManager.Instance.currentItem.InteractPast();
 
             else gameManager.Instance.currentItem.InteractPresent();
+        }
+
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f && wheeltimer >= 0.3f)
+        {
+            wheeltimer = 0f;
+            gameManager.Instance.inventory.ChangeCurrentItem(gameManager.Instance.currentItem, 1);
+        }
+
+        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0f && wheeltimer >= 0.3f)
+        {
+            wheeltimer = 0f;
+            gameManager.Instance.inventory.ChangeCurrentItem(gameManager.Instance.currentItem, -1);
+
         }
     }
 }

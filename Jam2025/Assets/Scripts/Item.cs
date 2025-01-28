@@ -12,13 +12,17 @@ public class Item
     [SerializeField] public Vector3 itemPos;
     public UnityEvent onInteractionPast;
     public UnityEvent onInteractionPresent;
+    public Sprite pastSprite;
+    public Sprite presentSprite;
 
-    public Item(string itemName, GameObject pastPrefab, GameObject presentPrefab, Vector3 itemPos)
+    public Item(string itemName, GameObject pastPrefab, GameObject presentPrefab, Vector3 itemPos, Sprite pastSprite, Sprite presentSprite)
     {
         this.itemName = itemName;
         this.pastPrefab = pastPrefab;
         this.presentPrefab = presentPrefab;
         this.itemPos = itemPos;
+        this.pastSprite = pastSprite;
+        this.presentSprite = presentSprite;
     }
 
     public void InteractPast()

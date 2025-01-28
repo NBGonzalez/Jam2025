@@ -17,6 +17,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] public Vector3 itemPos;
     public UnityEvent onInteractionPast;
     public UnityEvent onInteractionPresent;
+    public Sprite pastSprite;
+    public Sprite presentSprite;
 
     [SerializeField] private Interactable otherInteractable;
 
@@ -59,7 +61,7 @@ public class Interactable : MonoBehaviour
 
     public void AddItem()
     {
-        Item item = new Item(itemName, pastPrefab, presentPrefab, itemPos);
+        Item item = new Item(itemName, pastPrefab, presentPrefab, itemPos, pastSprite, presentSprite);
         item.onInteractionPast = onInteractionPast;
         item.onInteractionPresent = onInteractionPresent;
         gameManager.Instance.inventory.AddItem(item);

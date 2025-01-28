@@ -12,7 +12,7 @@ public class gameManager : MonoBehaviour
     }
 
     private TimeLine timeLine;
-    public Inventory inventory;
+    public InventoryUI inventory;
     public InputManager inputManager;
     public Item currentItem;
     public UnityEvent onChangeTime;
@@ -30,7 +30,6 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        inventory = new Inventory();
         timeLine = TimeLine.Past;
     }
 
@@ -51,5 +50,31 @@ public class gameManager : MonoBehaviour
     public TimeLine GetTimeLine()
     {
         return timeLine;
+    }
+
+    public void SetCurrentItem(Item item)
+    {
+        currentItem = item;
+        if (GetTimeLine() == TimeLine.Past)
+        {
+            item.pastPrefab.transform.SetParent(inputManager.player.hand);
+            item.pastPrefab.transform.localPosition = item.itemPos;
+
+            item.pastPrefab.SetActive(true);
+        }
+
+        else
+        {
+            item.presentPrefab.transform.SetParent(inputManager.player.hand);
+            item.presentPrefab.transform.localPosition = item.itemPos;
+            item.presentPrefab.SetActive(true);
+        }
+        gameObject.SetActive(false);
+    }
+
+    public void DisableCurrentItem()
+    {
+        currentItem.pastPrefab.SetActive(false);
+        currentItem.presentPrefab.SetActive(false);
     }
 }
