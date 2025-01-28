@@ -2507,7 +2507,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3458,6 +3458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1199290004}
+  - component: {fileID: 1199290005}
   m_Layer: 0
   m_Name: Dialogue Manager
   m_TagString: Untagged
@@ -3480,6 +3481,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 839760643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1199290005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199290003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 620314fb0b436484984abe61ad4efc54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueText: {fileID: 798618041}
+  Sentences:
+  - adfjasdfj
+  - hola que tal
+  - muy bien
+  DialogueSpeed: 0.05
 --- !u!4 &1205021514 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5480192286966155585, guid: bd2f74d1ebe19714eab073445f8f9f01,
