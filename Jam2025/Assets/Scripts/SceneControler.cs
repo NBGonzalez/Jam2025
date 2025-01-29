@@ -7,24 +7,32 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
-    [SerializeField] private GameObject pauseMenu; 
+    //[SerializeField] private GameObject pauseMenu; 
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            pauseMenu.SetActive(true);
-        }
-    }
+    //public void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        pauseMenu.SetActive(true);
+    //    }
+    //}
+
+
+
 
     public void loadGame()
     {
-        SceneManager.LoadScene(1);
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_CINEMATIC);
     }
 
     public void loadMenu()
     {
-        SceneManager.LoadScene(0);
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_MAIN_MENU);
+    }
+
+    public void loadGame2()
+    {
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_Game);
     }
 
     public void pause()
