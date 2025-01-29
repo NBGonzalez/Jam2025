@@ -20,6 +20,7 @@ public class Key : MonoBehaviour
         {
             if (gameManager.Instance.inputManager.player.currentInteractable.typeOfItem == ItemInteract)
             {
+                AudioManager.PlaySound(SoundType.Unlock, 1);
                 gameManager.Instance.inputManager.player.currentInteractable.Interact();
                 gameManager.Instance.inputManager.player.currentInteractable.itemInteract = false;
                 if (gameManager.Instance.inputManager.player.currentInteractable.otherInteractable!= null)

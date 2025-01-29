@@ -43,6 +43,7 @@ public class Door : MonoBehaviour
             {
                 closing = false;
                 open = false;
+                AudioManager.PlaySound(SoundType.CloseDoor, 1);
             }
 
         }
@@ -53,5 +54,11 @@ public class Door : MonoBehaviour
         Debug.Log("Entra");
         if (!open) opening = true;
         else closing = true;
+        AudioManager.PlaySound(SoundType.OpenDoor, 1);
+    }
+
+    public void KnockDoor()
+    {
+        AudioManager.PlaySound(SoundType.KnockDoor, 1);
     }
 }

@@ -57,6 +57,7 @@ public class DialogueManager : MonoBehaviour
 
     public static void StartDialogue(string[] dialogue)
     {
+        instance.StopAllCoroutines();
         instance.DialogueText.text = "";
         instance.Sentences = dialogue;
         instance.writing = true;
