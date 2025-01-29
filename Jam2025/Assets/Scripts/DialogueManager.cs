@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Sprite interactionMouse;
     [SerializeField] private Image mouseImage;
     private bool normalMouse = true;
+    [SerializeField] private GameObject backGround;
+    [SerializeField] private bool writing = false;
 
     // Start is called before the first frame update
 
@@ -35,7 +37,7 @@ public class DialogueManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && writing)
         {
             if (DialogueText.text == Sentences[index])
             {
@@ -53,10 +55,12 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public void StartDialogue()
+    public static void StartDialogue()
     {
-        index = 0;
-        StartCoroutine(WriteSentence());
+        instance.writing = true;
+        instance.index = 0;
+        instance.backGround.SetActive(true);
+        instance.StartCoroutine(instance.WriteSentence());
     }
 
     public void NextSentence()
@@ -70,7 +74,9 @@ public class DialogueManager : MonoBehaviour
 
         else
         {
+            writing = false;
             DialogueText.text = "";
+            backGround.SetActive(false);
         }
     }
 

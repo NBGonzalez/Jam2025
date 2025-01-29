@@ -57,19 +57,19 @@ public class gameManager : MonoBehaviour
         currentItem = item;
         if (GetTimeLine() == TimeLine.Past)
         {
-            item.pastPrefab.transform.SetParent(inputManager.player.hand);
-            item.pastPrefab.transform.localPosition = item.itemPos;
+            currentItem.pastPrefab.transform.SetParent(inputManager.player.hand);
+            currentItem.pastPrefab.transform.localPosition = item.itemPos;
 
-            item.pastPrefab.SetActive(true);
+            currentItem.pastPrefab.SetActive(true);
         }
 
         else
         {
-            item.presentPrefab.transform.SetParent(inputManager.player.hand);
-            item.presentPrefab.transform.localPosition = item.itemPos;
-            item.presentPrefab.SetActive(true);
+            currentItem.presentPrefab.transform.SetParent(inputManager.player.hand);
+            currentItem.presentPrefab.transform.localPosition = currentItem.itemPos;
+            currentItem.presentPrefab.SetActive(true);
         }
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     public void DisableCurrentItem()

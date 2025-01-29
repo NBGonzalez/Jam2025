@@ -15,6 +15,13 @@ public class Item
     public Sprite pastSprite;
     public Sprite presentSprite;
 
+    public enum ItemInteract
+    {
+        Key
+    }
+
+    public ItemInteract itemInteract;
+
     public Item(string itemName, GameObject pastPrefab, GameObject presentPrefab, Vector3 itemPos, Sprite pastSprite, Sprite presentSprite)
     {
         this.itemName = itemName;
@@ -23,6 +30,11 @@ public class Item
         this.itemPos = itemPos;
         this.pastSprite = pastSprite;
         this.presentSprite = presentSprite;
+    }
+
+    public void SetInteract(ItemInteract interact)
+    {
+        itemInteract = interact;
     }
 
     public void InteractPast()

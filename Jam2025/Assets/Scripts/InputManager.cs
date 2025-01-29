@@ -21,7 +21,7 @@ public class InputManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         wheeltimer += Time.deltaTime;
-        if (Input.GetButtonDown("Fire1") && timer >= 1f)
+        if (Input.GetButtonDown("Fire2") && timer >= 1f)
         {
             
             timer = 0f;
@@ -31,6 +31,15 @@ public class InputManager : MonoBehaviour
             player = player.otherPlayer;
             player.EnablePlayer();
             gameManager.Instance.ChangeTimeLine();
+            gameManager.Instance.inventory.ChangeAllItemsTime();
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (gameManager.Instance.currentItem == null) return;
+            if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past) gameManager.Instance.currentItem.InteractPast();
+
+            else gameManager.Instance.currentItem.InteractPresent();
         }
 
         if (Input.GetKeyDown(KeyCode.F))

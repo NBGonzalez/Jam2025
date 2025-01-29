@@ -15,6 +15,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] public GameObject pastPrefab;
     [SerializeField] public GameObject presentPrefab;
     [SerializeField] public Vector3 itemPos;
+    public bool itemInteract = false;
+    public Item.ItemInteract typeOfItem;
     public UnityEvent onInteractionPast;
     public UnityEvent onInteractionPresent;
     public Sprite pastSprite;
@@ -65,22 +67,25 @@ public class Interactable : MonoBehaviour
         item.onInteractionPast = onInteractionPast;
         item.onInteractionPresent = onInteractionPresent;
         gameManager.Instance.inventory.AddItem(item);
-        gameManager.Instance.currentItem = item;
-        if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past)
-        {
-            item.pastPrefab.transform.SetParent(gameManager.Instance.inputManager.player.hand);
-            item.pastPrefab.transform.localPosition = itemPos;
- 
-            item.pastPrefab.SetActive(true);
-        }
+        if (gameManager.Instance.currentItem != null)gameManager.Instance.DisableCurrentItem();
+        gameManager.Instance.SetCurrentItem(item);
+        //gameManager.Instance.currentItem = item;
 
-        else
-        {
-            item.presentPrefab.transform.SetParent(gameManager.Instance.inputManager.player.hand);
-            item.presentPrefab.transform.localPosition = itemPos;
-            item.presentPrefab.SetActive(true);
-        }
-        gameObject.SetActive(false);
+        //if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past)
+        //{
+        //    item.pastPrefab.transform.SetParent(gameManager.Instance.inputManager.player.hand);
+        //    item.pastPrefab.transform.localPosition = itemPos;
+
+        //    item.pastPrefab.SetActive(true);
+        //}
+
+        //else
+        //{
+        //    item.presentPrefab.transform.SetParent(gameManager.Instance.inputManager.player.hand);
+        //    item.presentPrefab.transform.localPosition = itemPos;
+        //    item.presentPrefab.SetActive(true);
+        //}
+        //gameObject.SetActive(false);
     }
 
 }

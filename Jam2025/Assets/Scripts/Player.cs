@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     private bool movement = false;
 
-    Interactable currentInteractable;
+    public Interactable currentInteractable;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
         CheckInteraction();
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            currentInteractable.Interact();
+            if(!currentInteractable.itemInteract)currentInteractable.Interact();
         }
 
         isTouching = Physics.Raycast(footTransform.position, -footTransform.up, footRange, collisionMask);

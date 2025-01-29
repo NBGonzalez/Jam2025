@@ -84,4 +84,23 @@ public class InventoryUI : MonoBehaviour
 
     }
 
+    public void ChangeAllItemsTime()
+    {
+        if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past)
+        {
+            foreach (int i in takenSlots)
+            {
+                images[i].sprite = itemIndex[i].pastSprite;
+            }
+        }
+
+        else
+        {
+            foreach (int i in takenSlots)
+            {
+                images[i].sprite = itemIndex[i].presentSprite;
+            }
+        }
+    }
+
 }

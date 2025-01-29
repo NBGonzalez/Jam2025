@@ -662,6 +662,8 @@ MonoBehaviour:
   mouse: {fileID: 21300000, guid: bf0a0bda0fb132747ac1ac8cd2508ead, type: 3}
   interactionMouse: {fileID: 21300000, guid: 96008f0eb4538f74884c00e0ef292d90, type: 3}
   mouseImage: {fileID: 2047554205393102220}
+  backGround: {fileID: 6792592884860915076}
+  writing: 0
 --- !u!1 &5336994589067664339
 GameObject:
   m_ObjectHideFlags: 0
@@ -755,7 +757,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1483719660741325081
 RectTransform:
   m_ObjectHideFlags: 0

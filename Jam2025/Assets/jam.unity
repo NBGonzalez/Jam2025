@@ -169,6 +169,7 @@ MonoBehaviour:
   controllPlayer: 0
   otherPlayer: {fileID: 906032558}
   hand: {fileID: 1074316856}
+  currentInteractable: {fileID: 0}
 --- !u!143 &65676336
 CharacterController:
   m_ObjectHideFlags: 0
@@ -379,6 +380,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 0}
   presentPrefab: {fileID: 0}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls: []
@@ -515,21 +518,14 @@ MonoBehaviour:
   pastPrefab: {fileID: 314411022}
   presentPrefab: {fileID: 1853179445}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
-      m_Calls: []
-  onInteractionPresent:
-    m_PersistentCalls:
-      m_Calls: []
-  pastSprite: {fileID: 21300000, guid: 6ce6b5c63a915c449bcd591f91b485bc, type: 3}
-  presentSprite: {fileID: 21300000, guid: d3eb8ded303d1034da4f5869be4851aa, type: 3}
-  otherInteractable: {fileID: 0}
-  onInteraction:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 314411023}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: AddItem
+      - m_Target: {fileID: 593753365}
+        m_TargetAssemblyTypeName: Key, Assembly-CSharp
+        m_MethodName: Interaction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -539,10 +535,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 314411022}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+  onInteractionPresent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 593753365}
+        m_TargetAssemblyTypeName: Key, Assembly-CSharp
+        m_MethodName: Interaction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pastSprite: {fileID: 21300000, guid: 3312c35f32516c348accc6a2b81a3817, type: 3}
+  presentSprite: {fileID: 21300000, guid: 3fd505a8746bc194481563befd325a28, type: 3}
+  otherInteractable: {fileID: 0}
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 314411023}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: AddItem
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -846,6 +863,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 554712487}
   presentPrefab: {fileID: 463245247}
   itemPos: {x: 0.0001259865, y: 0.003715324, z: -0.00106209}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls:
@@ -1279,6 +1298,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 463245247}
   presentPrefab: {fileID: 554712487}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls: []
@@ -1303,6 +1324,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &593753364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 593753366}
+  - component: {fileID: 593753365}
+  m_Layer: 0
+  m_Name: Interaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &593753365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593753364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b061d3f0b4789b4a9ff1862d69ea44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemInteract: 0
+--- !u!4 &593753366
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593753364}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -28.547882, y: 1.430469, z: -6.2609515}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &663967621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,6 +1422,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 0}
   presentPrefab: {fileID: 0}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls: []
@@ -1629,6 +1697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Key Past
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364640781869427241, guid: 5eef7ff44919cc34ebb4905bf72cc6c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4364640781869427241, guid: 5eef7ff44919cc34ebb4905bf72cc6c5,
         type: 3}
@@ -3211,6 +3284,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 0}
   presentPrefab: {fileID: 0}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 0
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls: []
@@ -3470,6 +3545,7 @@ MonoBehaviour:
   controllPlayer: 0
   otherPlayer: {fileID: 0}
   hand: {fileID: 0}
+  currentInteractable: {fileID: 0}
 --- !u!143 &1838299745
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4530,6 +4606,8 @@ MonoBehaviour:
   pastPrefab: {fileID: 0}
   presentPrefab: {fileID: 0}
   itemPos: {x: 0, y: 0, z: 0}
+  itemInteract: 1
+  typeOfItem: 0
   onInteractionPast:
     m_PersistentCalls:
       m_Calls: []
@@ -4568,11 +4646,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1026306322}
     m_Modifications:
-    - target: {fileID: 1554548638811620926, guid: 37b20064a11c38e4f83fcc5ae61e30ee,
-        type: 3}
-      propertyPath: mouse
-      value: 
-      objectReference: {fileID: 2800000, guid: bf0a0bda0fb132747ac1ac8cd2508ead, type: 3}
     - target: {fileID: 1554548638811620926, guid: 37b20064a11c38e4f83fcc5ae61e30ee,
         type: 3}
       propertyPath: otherPlayer
@@ -4993,3 +5066,4 @@ SceneRoots:
   - {fileID: 5726755624959736796}
   - {fileID: 992647894}
   - {fileID: 1993052210}
+  - {fileID: 593753366}
