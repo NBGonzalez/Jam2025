@@ -15,6 +15,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] public GameObject pastPrefab;
     [SerializeField] public GameObject presentPrefab;
     [SerializeField] public Vector3 itemPos;
+    [SerializeField] public Quaternion itemRot;
     public bool itemInteract = false;
     public Item.ItemInteract typeOfItem;
     public UnityEvent onInteractionPast;
@@ -22,7 +23,7 @@ public class Interactable : MonoBehaviour
     public Sprite pastSprite;
     public Sprite presentSprite;
 
-    [SerializeField] private Interactable otherInteractable;
+    [SerializeField] public Interactable otherInteractable;
 
     public UnityEvent onInteraction;
     // Start is called before the first frame update
@@ -69,6 +70,7 @@ public class Interactable : MonoBehaviour
         gameManager.Instance.inventory.AddItem(item);
         if (gameManager.Instance.currentItem != null)gameManager.Instance.DisableCurrentItem();
         gameManager.Instance.SetCurrentItem(item);
+        Destroy(gameObject);
         //gameManager.Instance.currentItem = item;
 
         //if (gameManager.Instance.GetTimeLine() == gameManager.TimeLine.Past)

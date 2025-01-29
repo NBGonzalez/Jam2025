@@ -20,6 +20,12 @@ public class Key : MonoBehaviour
             if (gameManager.Instance.inputManager.player.currentInteractable.typeOfItem == ItemInteract)
             {
                 gameManager.Instance.inputManager.player.currentInteractable.Interact();
+                gameManager.Instance.inputManager.player.currentInteractable.itemInteract = false;
+                if (gameManager.Instance.inputManager.player.currentInteractable.otherInteractable!= null)
+                {
+                    gameManager.Instance.inputManager.player.currentInteractable.otherInteractable.itemInteract = false;
+                }
+                gameManager.Instance.inventory.RemoveItem(gameManager.Instance.currentItem);
             }
         }
     }

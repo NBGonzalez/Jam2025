@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
-    CharacterController controller;
+    public CharacterController controller;
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float playerReach = 3f;
     [SerializeField] private float gravity = -9.8f;
@@ -148,9 +148,11 @@ public class Player : MonoBehaviour
 
     public void DisablePlayer()
     {
+        //movement = false;
+        //animator.SetBool("Walk", movement);
         listener.enabled = false;
         camara.enabled = false;
-        
+        controller.enabled = false;
         controllPlayer = false;
     }
 
@@ -158,6 +160,7 @@ public class Player : MonoBehaviour
     {
         camara.enabled = true;
         listener.enabled = true;
+        controller.enabled = true;
         controllPlayer = true;
     }
 }

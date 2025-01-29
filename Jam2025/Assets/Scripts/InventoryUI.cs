@@ -72,6 +72,10 @@ public class InventoryUI : MonoBehaviour
         slots.Sort();
         takenSlots.Remove(idx);
         takenSlots.Sort();
+        if(takenSlots.Count > 0) gameManager.Instance.currentItem = itemIndex[takenSlots[0]];
+        else gameManager.Instance.currentItem = null;
+        Destroy(item.pastPrefab);
+        Destroy(item.presentPrefab);
     }
 
     public void ChangeCurrentItem(Item item, int i)

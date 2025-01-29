@@ -31,7 +31,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        StartDialogue();
+        StartDialogue(Sentences);
     }
 
     // Update is called once per frame
@@ -55,8 +55,10 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    public static void StartDialogue()
+    public static void StartDialogue(string[] dialogue)
     {
+        instance.DialogueText.text = "";
+        instance.Sentences = dialogue;
         instance.writing = true;
         instance.index = 0;
         instance.backGround.SetActive(true);

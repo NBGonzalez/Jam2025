@@ -11,7 +11,7 @@ public class gameManager : MonoBehaviour
         Present
     }
 
-    private TimeLine timeLine;
+    [SerializeField]private TimeLine timeLine;
     public InventoryUI inventory;
     public InputManager inputManager;
     public Item currentItem;
@@ -30,7 +30,7 @@ public class gameManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        timeLine = TimeLine.Past;
+        //timeLine = TimeLine.Past;
     }
 
     // Update is called once per frame

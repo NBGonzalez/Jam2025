@@ -14,6 +14,8 @@ public class InputManager : MonoBehaviour
     void Start()
     {
         player.controllPlayer = true;
+        //player.controller.enabled = true;
+        //player.otherPlayer.controller.enabled = false;
     }
 
     // Update is called once per frame
