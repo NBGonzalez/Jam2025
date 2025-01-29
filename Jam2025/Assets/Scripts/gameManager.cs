@@ -55,6 +55,7 @@ public class gameManager : MonoBehaviour
     public void SetCurrentItem(Item item)
     {
         currentItem = item;
+        inventory.EnableCurrentItem();
         if (GetTimeLine() == TimeLine.Past)
         {
             currentItem.pastPrefab.transform.SetParent(inputManager.player.hand);

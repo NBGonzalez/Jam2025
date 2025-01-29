@@ -5,6 +5,7 @@ using UnityEngine;
 public class Key : MonoBehaviour
 {
     public Item.ItemInteract ItemInteract;
+    public string[] sentences;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,11 @@ public class Key : MonoBehaviour
                     gameManager.Instance.inputManager.player.currentInteractable.otherInteractable.itemInteract = false;
                 }
                 gameManager.Instance.inventory.RemoveItem(gameManager.Instance.currentItem);
+            }
+
+            else
+            {
+                DialogueManager.StartDialogue(sentences);
             }
         }
     }

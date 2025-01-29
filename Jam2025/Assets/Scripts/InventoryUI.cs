@@ -10,6 +10,7 @@ public class InventoryUI : MonoBehaviour
     public List<int> slots = new List<int>();
     public List<int> takenSlots = new List<int>();
     public List<Image> images = new List<Image>();
+    public List<GameObject> currentSlots = new List<GameObject>();
 
     public void Awake()
     {
@@ -72,8 +73,12 @@ public class InventoryUI : MonoBehaviour
         slots.Sort();
         takenSlots.Remove(idx);
         takenSlots.Sort();
-        if(takenSlots.Count > 0) gameManager.Instance.currentItem = itemIndex[takenSlots[0]];
-        else gameManager.Instance.currentItem = null;
+        if (takenSlots.Count > 0) gameManager.Instance.SetCurrentItem(itemIndex[takenSlots[0]]);
+        else
+        {
+            gameManager.Instance.currentItem = null;
+            currentSlots[idx].SetActive(false);
+        }
         Destroy(item.pastPrefab);
         Destroy(item.presentPrefab);
     }
@@ -82,10 +87,24 @@ public class InventoryUI : MonoBehaviour
     {
         int idx = inventory[item];
         idx = takenSlots.IndexOf(idx);
+        currentSlots[idx].SetActive(false);
         idx = (idx + i + takenSlots.Count) % takenSlots.Count;
         gameManager.Instance.DisableCurrentItem();
+        currentSlots[idx].SetActive(true);
         gameManager.Instance.SetCurrentItem(itemIndex[idx]);
 
+    }
+
+    public void DisableCurrentItem()
+    {
+        int idx = inventory[gameManager.Instance.currentItem];
+        currentSlots[idx].SetActive(false);
+    }
+
+    public void EnableCurrentItem()
+    {
+        int idx = inventory[gameManager.Instance.currentItem];
+        currentSlots[idx].SetActive(true);
     }
 
     public void ChangeAllItemsTime()

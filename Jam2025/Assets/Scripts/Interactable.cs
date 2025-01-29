@@ -23,9 +23,13 @@ public class Interactable : MonoBehaviour
     public Sprite pastSprite;
     public Sprite presentSprite;
 
+    public string[] sentences;
+
+
     [SerializeField] public Interactable otherInteractable;
 
     public UnityEvent onInteraction;
+    public UnityEvent onWrongInteraction;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +54,11 @@ public class Interactable : MonoBehaviour
         onInteraction.Invoke();
     }
 
+    public void WrongInteract()
+    {
+        onWrongInteraction.Invoke();
+    }
+
     public void DisableOutline()
     {
         if (outline == null) return;
@@ -68,7 +77,11 @@ public class Interactable : MonoBehaviour
         item.onInteractionPast = onInteractionPast;
         item.onInteractionPresent = onInteractionPresent;
         gameManager.Instance.inventory.AddItem(item);
-        if (gameManager.Instance.currentItem != null)gameManager.Instance.DisableCurrentItem();
+        if (gameManager.Instance.currentItem != null)
+        {
+            gameManager.Instance.DisableCurrentItem();
+            gameManager.Instance.inventory.DisableCurrentItem();
+        }
         gameManager.Instance.SetCurrentItem(item);
         Destroy(gameObject);
         //gameManager.Instance.currentItem = item;
@@ -88,6 +101,11 @@ public class Interactable : MonoBehaviour
         //    item.presentPrefab.SetActive(true);
         //}
         //gameObject.SetActive(false);
+    }
+
+    public void Dialogue()
+    {
+        DialogueManager.StartDialogue(sentences);
     }
 
 }

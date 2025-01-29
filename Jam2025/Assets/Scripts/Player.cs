@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
             if(!currentInteractable.itemInteract)currentInteractable.Interact();
+
+            if(currentInteractable.itemInteract)currentInteractable.WrongInteract();
         }
 
         isTouching = Physics.Raycast(footTransform.position, -footTransform.up, footRange, collisionMask);
