@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] public Player player;
     public Animator animator;
     public Animator ambientAnimator;
@@ -53,7 +54,14 @@ public class InputManager : MonoBehaviour
             else gameManager.Instance.currentItem.InteractPresent();
         }
 
-        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f && wheeltimer >= 0.3f)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+            Cursor.visible = true; 
+        }
+
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f && wheeltimer >= 0.3f)
         {
             wheeltimer = 0f;
             gameManager.Instance.inventory.ChangeCurrentItem(gameManager.Instance.currentItem, 1);

@@ -7,19 +7,6 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
-    //[SerializeField] private GameObject pauseMenu; 
-
-    //public void Update()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Escape))
-    //    {
-    //        pauseMenu.SetActive(true);
-    //    }
-    //}
-
-
-
-
     public void loadGame()
     {
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_CINEMATIC);
@@ -42,6 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void resume()
     {
+        Cursor.visible = false; 
         Time.timeScale = 1.0f;
     }
 }
