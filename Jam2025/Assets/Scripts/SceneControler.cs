@@ -29,7 +29,8 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void resume()
     {
-        Cursor.visible = false; 
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
     }
 }

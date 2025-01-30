@@ -22,7 +22,8 @@ public class Item
     public enum ItemInteract
     {
         Key,
-        Card
+        Card,
+        List
     }
 
     public ItemInteract itemInteract;

@@ -58,7 +58,8 @@ public class InputManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             pauseMenu.SetActive(true);
-            Cursor.visible = true; 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
         }
 
         if (Input.GetAxisRaw("Mouse ScrollWheel") > 0f && wheeltimer >= 0.3f)
