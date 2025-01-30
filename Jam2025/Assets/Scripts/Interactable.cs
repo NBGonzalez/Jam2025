@@ -16,7 +16,10 @@ public class Interactable : MonoBehaviour
     [SerializeField] public GameObject presentPrefab;
     [SerializeField] public Vector3 itemPos;
     [SerializeField] public Quaternion itemRot;
+    [SerializeField] public Vector3 itemScale;
     public bool itemInteract = false;
+    public bool itemTransform = false;
+    public Transform t;
     public Item.ItemInteract typeOfItem;
     public UnityEvent onInteractionPast;
     public UnityEvent onInteractionPresent;
@@ -73,7 +76,12 @@ public class Interactable : MonoBehaviour
 
     public void AddItem()
     {
-        Item item = new Item(itemName, pastPrefab, presentPrefab, itemPos, pastSprite, presentSprite);
+        Item item = new Item(itemName, pastPrefab, presentPrefab, itemPos, pastSprite, presentSprite, itemScale, itemRot);
+        if (itemTransform)
+        {
+            item.SetPos(true);
+            item.SetTransform(t);
+        }
         item.onInteractionPast = onInteractionPast;
         item.onInteractionPresent = onInteractionPresent;
         gameManager.Instance.inventory.AddItem(item);

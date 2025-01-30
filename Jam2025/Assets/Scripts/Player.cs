@@ -7,6 +7,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public CharacterController controller;
+    public Collider trigger;
+    public LayerMask layer;
     [SerializeField] private float speed = 1.0f;
     [SerializeField] private float playerReach = 3f;
     [SerializeField] private float gravity = -9.8f;
@@ -152,6 +154,7 @@ public class Player : MonoBehaviour
     {
         //movement = false;
         //animator.SetBool("Walk", movement);
+        trigger.enabled = true;
         listener.enabled = false;
         camara.enabled = false;
         controller.enabled = false;
@@ -160,6 +163,7 @@ public class Player : MonoBehaviour
 
     public void EnablePlayer()
     {
+        trigger.enabled = false;
         camara.enabled = true;
         listener.enabled = true;
         controller.enabled = true;

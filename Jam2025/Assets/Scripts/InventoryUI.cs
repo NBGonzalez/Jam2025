@@ -65,6 +65,7 @@ public class InventoryUI : MonoBehaviour
     public void RemoveItem(Item item)
     {
         int idx = inventory[item];
+        currentSlots[idx].SetActive(false);
         images[idx].sprite = null;
         images[idx].gameObject.SetActive(false);
         inventory.Remove(item);
