@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Cinematic.unity
     guid: 62b7396020bd20743b0f2afc273ad98e
   - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: 3212f7f4290ef674cb9c1cf31680dafb
+  - enabled: 1
+    path: Assets/Scenes/LastCinematic.unity
+    guid: 4bcdde9b3791dbb43a0c1b39cb3d644b
+  - enabled: 1
     path: Assets/jam.unity
     guid: f30f34bc3cd35304b8b0b6cb8390e37e
   m_configObjects: {}

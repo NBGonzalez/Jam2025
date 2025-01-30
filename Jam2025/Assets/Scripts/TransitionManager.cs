@@ -28,7 +28,8 @@ public class TransitionManager : MonoBehaviour
 
     public const string SCENE_MAIN_MENU = "MainMenu";
     public const string SCENE_CINEMATIC = "Cinematic";
-    public const string SCENE_Game = "Jam";
+    public const string SCENE_LASTCINEMATIC = "LastCinematic";
+    public const string SCENE_Game = "Game";
 
     private Animator m_anim; 
 
@@ -79,10 +80,20 @@ public class TransitionManager : MonoBehaviour
         {
             Invoke("loadGame2", 30f);
         }
+
+        else if (sceneName == SCENE_LASTCINEMATIC)
+        {
+            Invoke("loadMenu", 30f);
+        }
         m_anim.SetBool("Show", false);
     }
     public void loadGame2()
     {
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_Game);
+    }
+
+    public void loadMenu()
+    {
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_MAIN_MENU);
     }
 }
