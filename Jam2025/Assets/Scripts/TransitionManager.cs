@@ -83,7 +83,7 @@ public class TransitionManager : MonoBehaviour
 
         else if (sceneName == SCENE_LASTCINEMATIC)
         {
-            Invoke("loadMenu", 30f);
+            Invoke("loadMenu", 55f);
         }
         m_anim.SetBool("Show", false);
     }

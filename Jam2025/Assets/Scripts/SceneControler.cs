@@ -7,6 +7,22 @@ using UnityEngine.SceneManagement;
 public class NewBehaviourScript : MonoBehaviour
 {
 
+
+    [SerializeField] private bool isCinematic;
+    [SerializeField] private bool isLastCinematic;
+
+    private void Update()
+    {
+        if (isCinematic && Input.GetKey(KeyCode.Space))
+        {
+            loadGame2();
+        }
+        else if (isLastCinematic && Input.GetKey(KeyCode.Space))
+        {
+            loadMenu();
+        }
+    }
+
     public void loadGame()
     {
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_CINEMATIC);
