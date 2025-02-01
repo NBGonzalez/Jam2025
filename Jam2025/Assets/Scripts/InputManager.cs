@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
     public bool timeChange = false;
     public float timer = 5f;
     public float wheeltimer = 0.5f;
+    public Dialogo cantTravel;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +27,23 @@ public class InputManager : MonoBehaviour
         wheeltimer += Time.deltaTime;
         if (Input.GetButtonDown("Fire2") && timer >= 1f)
         {
-            
-            timer = 0f;
-            animator.SetTrigger("Time");
-            ambientAnimator.SetTrigger("Time");
-            player.DisablePlayer();
-            player = player.otherPlayer;
-            player.EnablePlayer();
-            gameManager.Instance.ChangeTimeLine();
-            gameManager.Instance.inventory.ChangeAllItemsTime();
+
+            if (!gameManager.Instance.canTravel)
+            {
+                cantTravel.StartConversation();
+            }
+
+            else
+            {
+                timer = 0f;
+                animator.SetTrigger("Time");
+                ambientAnimator.SetTrigger("Time");
+                player.DisablePlayer();
+                player = player.otherPlayer;
+                player.EnablePlayer();
+                gameManager.Instance.ChangeTimeLine();
+                gameManager.Instance.inventory.ChangeAllItemsTime();
+            }
         }
 
         if (Input.GetButtonDown("Fire1"))

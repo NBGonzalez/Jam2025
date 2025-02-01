@@ -18,6 +18,7 @@ public class Key : MonoBehaviour
         if (gameManager.Instance.inputManager.player.currentInteractable == null) return;
         if (gameManager.Instance.inputManager.player.currentInteractable.itemInteract)
         {
+            if (gameManager.Instance.firstInteractItem) gameManager.Instance.firstInteractItem = false;
             if (gameManager.Instance.inputManager.player.currentInteractable.typeOfItem == ItemInteract)
             {
                 AudioManager.PlaySound(SoundType.Unlock, 1);
@@ -35,6 +36,11 @@ public class Key : MonoBehaviour
                 DialogueManager.StartDialogue(sentences);
             }
         }
+    }
+
+    public void PlaySound()
+    {
+        AudioManager.PlaySound(SoundType.Keys, 1);
     }
 
 }

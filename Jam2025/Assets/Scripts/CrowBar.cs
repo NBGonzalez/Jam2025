@@ -1,13 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Card : MonoBehaviour
+public class CrowBar : MonoBehaviour
 {
     public Item.ItemInteract ItemInteract;
     public string[] sentences;
-    public UnityEvent Sound;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +17,12 @@ public class Card : MonoBehaviour
         if (gameManager.Instance.inputManager.player.currentInteractable == null) return;
         if (gameManager.Instance.inputManager.player.currentInteractable.itemInteract)
         {
+            if (gameManager.Instance.firstInteractItem) gameManager.Instance.firstInteractItem = false;
             if (gameManager.Instance.inputManager.player.currentInteractable.typeOfItem == ItemInteract)
             {
-                AudioManager.PlaySound(SoundType.Unlock, 1);
-                Sound.Invoke();
+                AudioManager.PlaySound(SoundType.Push, 1);
+                AudioManager.PlaySound(SoundType.Nails, 1);
                 gameManager.Instance.inputManager.player.currentInteractable.Interact();
-                gameManager.Instance.inputManager.player.currentInteractable.itemInteract = false;
-                if (gameManager.Instance.inputManager.player.currentInteractable.otherInteractable != null)
-                {
-                    gameManager.Instance.inputManager.player.currentInteractable.otherInteractable.itemInteract = false;
-                }
                 gameManager.Instance.inventory.RemoveItem(gameManager.Instance.currentItem);
             }
 
@@ -38,5 +32,4 @@ public class Card : MonoBehaviour
             }
         }
     }
-
 }

@@ -13,4 +13,9 @@ public class Dialogo : MonoBehaviour
             DialogueManager.StartDialogue(sentences);
         }
     }
+
+    public void StartConversation()
+    {
+        DialogueManager.StartDialogue(sentences);
+    }
 }

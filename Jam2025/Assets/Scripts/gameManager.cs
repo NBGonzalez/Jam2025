@@ -17,6 +17,11 @@ public class gameManager : MonoBehaviour
     public InputManager inputManager;
     public Item currentItem;
     public UnityEvent onChangeTime;
+    public bool firstInteract = true;
+    public bool firstInteractItem = true;
+    public bool canTravel = true;
+    public Dialogo firstInteractDialogue;
+    public Dialogo firstInteractItemDialogue;
 
     [Header("Audio")]
     [SerializeField] private AudioSource presentAudio;

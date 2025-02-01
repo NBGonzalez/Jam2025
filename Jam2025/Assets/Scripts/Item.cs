@@ -23,7 +23,8 @@ public class Item
     {
         Key,
         Card,
-        List
+        List,
+        CrowBar
     }
 
     public ItemInteract itemInteract;

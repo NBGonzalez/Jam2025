@@ -26,9 +26,13 @@ public class Player : MonoBehaviour
 
 
 
-    [Header("Animaciones")]
+    [Header("Animations")]
     private Animator animator;
     private bool movement = false;
+
+    [Header("Sounds")]
+    public AudioSource AudioSource;
+    public AudioClip clip;
 
     public Interactable currentInteractable;
     // Start is called before the first frame update
@@ -46,9 +50,17 @@ public class Player : MonoBehaviour
         CheckInteraction();
         if (Input.GetKeyDown(KeyCode.E) && currentInteractable != null)
         {
-            if(!currentInteractable.itemInteract)currentInteractable.Interact();
+            if (!currentInteractable.itemInteract)
+            {
+                if (gameManager.Instance.firstInteract) gameManager.Instance.firstInteract = false;
+                currentInteractable.Interact();
+            }
 
-            if(currentInteractable.itemInteract)currentInteractable.WrongInteract();
+            if (currentInteractable.itemInteract)
+            {
+                if (gameManager.Instance.firstInteract) gameManager.Instance.firstInteract = false;
+                currentInteractable.WrongInteract();
+            }
         }
 
         isTouching = Physics.Raycast(footTransform.position, -footTransform.up, footRange, collisionMask);
@@ -135,6 +147,15 @@ public class Player : MonoBehaviour
 
     private void SetNewCurrentInteractable(Interactable newInteractable)
     {
+        if (gameManager.Instance.firstInteract && currentInteractable != newInteractable)
+        {
+            gameManager.Instance.firstInteractDialogue.StartConversation();
+        }
+
+        if(gameManager.Instance.firstInteractItem && gameManager.Instance.currentItem!= null && currentInteractable != newInteractable)
+        {
+            gameManager.Instance.firstInteractItemDialogue.StartConversation();
+        }
         currentInteractable = newInteractable;
         DialogueManager.SetInteractionMouse();
         currentInteractable.EnableOutline();
@@ -143,6 +164,7 @@ public class Player : MonoBehaviour
 
     private void DisableCurrentInteractable()
     {
+
         //HUDController.instance.DisableInteractionText();
         if (currentInteractable == null) return;
         DialogueManager.SetNormalMouse();
@@ -154,7 +176,7 @@ public class Player : MonoBehaviour
     {
         //movement = false;
         //animator.SetBool("Walk", movement);
-        trigger.enabled = true;
+        //trigger.enabled = true;
         listener.enabled = false;
         camara.enabled = false;
         controller.enabled = false;
@@ -163,10 +185,15 @@ public class Player : MonoBehaviour
 
     public void EnablePlayer()
     {
-        trigger.enabled = false;
+        //trigger.enabled = false;
         camara.enabled = true;
         listener.enabled = true;
         controller.enabled = true;
         controllPlayer = true;
+    }
+
+    public void PlaySound()
+    {
+        AudioSource.PlayOneShot(clip, 1);
     }
 }

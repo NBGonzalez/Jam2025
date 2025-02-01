@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 public enum SoundType
@@ -10,7 +11,11 @@ public enum SoundType
     OpenDoor,
     CloseDoor,
     KnockDoor,
-    Unlock
+    Unlock,
+    Keys,
+    FootStep,
+    Push,
+    Nails
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
@@ -37,6 +42,13 @@ public class AudioManager : MonoBehaviour
         AudioClip[] clips = instance.soundList[(int)sound].Sounds;
         AudioClip randomClip = clips[Random.Range(0, clips.Length)];
         instance.audioSource.PlayOneShot(randomClip, volume);
+    }
+
+    public void Play(SoundType sound)
+    {
+        AudioClip[] clips = soundList[(int)sound].Sounds;
+        AudioClip randomClip = clips[Random.Range(0, clips.Length)];
+        audioSource.PlayOneShot(randomClip, 1);
     }
 
     private void Update()

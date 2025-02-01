@@ -86,6 +86,8 @@ public class TransitionManager : MonoBehaviour
             Invoke("loadMenu", 55f);
         }
         m_anim.SetBool("Show", false);
+
+        
     }
     public void loadGame2()
     {

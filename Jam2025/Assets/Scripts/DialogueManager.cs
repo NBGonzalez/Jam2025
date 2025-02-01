@@ -66,6 +66,14 @@ public class DialogueManager : MonoBehaviour
         instance.StartCoroutine(instance.WriteSentence());
     }
 
+    public static void StopDialogue()
+    {
+        instance.StopAllCoroutines();
+        instance.writing = false;
+        instance.DialogueText.text = "";
+        instance.backGround.SetActive(false);
+    }
+
     public void NextSentence()
     {
         if(index < Sentences.Length - 1)
