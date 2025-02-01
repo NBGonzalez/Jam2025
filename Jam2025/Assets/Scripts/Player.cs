@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool isTouching;
     [SerializeField] private LayerMask collisionMask;
     [SerializeField] private Vector3 otherPosition;
-    [SerializeField] private Camera camara;
+    [SerializeField] public Camera camara;
     [SerializeField] private AudioListener listener;
     public bool controllPlayer = false;
     public Player otherPlayer;
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
 
-        controller.Move(velocity * Time.deltaTime);
+        if(controller.enabled) controller.Move(velocity * Time.deltaTime);
         //otherPosition = otherPlayer.transform.localPosition - transform.localPosition;
         otherPlayer.transform.localPosition = transform.localPosition + otherPosition;
         otherPlayer.transform.localRotation = transform.localRotation;
@@ -84,19 +84,20 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
+        if (!controller.enabled) return;
         movement = false;
         if (Input.GetButton("Horizontal"))
         {
             movement = true;
             Vector3 move = Input.GetAxis("Horizontal") * transform.right;
-            controller.Move(move * speed * Time.deltaTime);
+             controller.Move(move * speed * Time.deltaTime);
         }
 
         if (Input.GetButton("Vertical"))
         {
             movement = true;
             Vector3 move = Input.GetAxis("Vertical") * transform.forward;
-            controller.Move(move * speed * Time.deltaTime);
+             controller.Move(move * speed * Time.deltaTime);
         }
 
 

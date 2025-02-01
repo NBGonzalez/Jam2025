@@ -36,6 +36,10 @@ public class Key : MonoBehaviour
                 DialogueManager.StartDialogue(sentences);
             }
         }
+        else
+        {
+            DialogueManager.StartDialogue(sentences);
+        }
     }
 
     public void PlaySound()

@@ -31,5 +31,10 @@ public class CrowBar : MonoBehaviour
                 DialogueManager.StartDialogue(sentences);
             }
         }
+
+        else
+        {
+            DialogueManager.StartDialogue(sentences);
+        }
     }
 }

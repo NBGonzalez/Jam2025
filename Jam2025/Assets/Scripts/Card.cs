@@ -37,6 +37,10 @@ public class Card : MonoBehaviour
                 DialogueManager.StartDialogue(sentences);
             }
         }
+        else
+        {
+            DialogueManager.StartDialogue(sentences);
+        }
     }
 
 }

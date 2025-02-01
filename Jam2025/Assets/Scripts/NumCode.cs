@@ -8,7 +8,8 @@ public class NumCode : MonoBehaviour
     [SerializeField] private Sprite[] numbers;
     [SerializeField] private Image[] display;
     private string code;
-    private string answer; 
+    private string answer;
+    [SerializeField] private GameObject code_GameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,8 @@ public class NumCode : MonoBehaviour
             if (code == answer)
             {
                 Debug.Log("Correct");
+                //Desactivate();
+                Invoke("Desactivate", 0.5f);
             }
             else
             {
@@ -95,5 +98,23 @@ public class NumCode : MonoBehaviour
     private void OnDestroy()
     {
         PushButton.ButtonPressed -= AddNumberToDisplay;
+    }
+
+    public void Activate()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        gameManager.Instance.canTravel = false;
+        gameManager.Instance.inputManager.player.controller.enabled = false;
+        gameManager.Instance.inputManager.player.camara.GetComponent<PlayerCamera>().enabled = false;
+    }
+
+    public void Desactivate()
+    {
+        Reset();
+        Cursor.lockState = CursorLockMode.Locked;
+        gameManager.Instance.inputManager.player.camara.GetComponent<PlayerCamera>().enabled = true;
+        gameManager.Instance.canTravel = true;
+        gameManager.Instance.inputManager.player.controller.enabled = true;
+        code_GameObject.SetActive(false);
     }
 }
