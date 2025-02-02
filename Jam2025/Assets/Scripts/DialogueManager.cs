@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     private bool normalMouse = true;
     [SerializeField] private GameObject backGround;
     [SerializeField] private bool writing = false;
+    public bool lastDialogue = false;
+    [SerializeField] private AudioSource audioSource;
 
     // Start is called before the first frame update
 
@@ -57,6 +59,21 @@ public class DialogueManager : MonoBehaviour
 
     public static void StartDialogue(string[] dialogue)
     {
+        if (instance.lastDialogue) return;
+        instance.StopAllCoroutines();
+        instance.DialogueText.text = "";
+        instance.Sentences = dialogue;
+        instance.writing = true;
+        instance.index = 0;
+        instance.backGround.SetActive(true);
+        instance.StartCoroutine(instance.WriteSentence());
+    }
+    
+    public static void StartLastDialogue(string[] dialogue)
+    {
+        if (instance.lastDialogue) return;
+        instance.audioSource.Stop();
+        instance.lastDialogue = true;
         instance.StopAllCoroutines();
         instance.DialogueText.text = "";
         instance.Sentences = dialogue;
@@ -68,6 +85,7 @@ public class DialogueManager : MonoBehaviour
 
     public static void StopDialogue()
     {
+        if (instance.lastDialogue) return;
         instance.StopAllCoroutines();
         instance.writing = false;
         instance.DialogueText.text = "";
@@ -85,9 +103,11 @@ public class DialogueManager : MonoBehaviour
 
         else
         {
+
             writing = false;
             DialogueText.text = "";
-            backGround.SetActive(false);
+            if (!lastDialogue)backGround.SetActive(false);
+            if (lastDialogue) Invoke("ChangeCinematic", 0.5f);
         }
     }
 
@@ -113,5 +133,10 @@ public class DialogueManager : MonoBehaviour
         if (instance.normalMouse) return;
         instance.mouseImage.sprite = instance.mouse;
         instance.normalMouse = true;
+    }
+
+    public void ChangeCinematic()
+    {
+        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_LASTCINEMATIC);
     }
 }

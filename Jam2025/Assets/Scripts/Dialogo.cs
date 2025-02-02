@@ -18,4 +18,9 @@ public class Dialogo : MonoBehaviour
     {
         DialogueManager.StartDialogue(sentences);
     }
+
+    public void StartLastConversation()
+    {
+        DialogueManager.StartLastDialogue(sentences);
+    }
 }

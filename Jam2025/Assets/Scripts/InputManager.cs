@@ -1,23 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] public Player player;
+    [SerializeField] private PlayerCamera camera_1;
+    [SerializeField] private PlayerCamera camera_2;
     public Animator animator;
     public Animator ambientAnimator;
     public bool timeChange = false;
     public float timer = 5f;
     public float wheeltimer = 0.5f;
     public Dialogo cantTravel;
+    [SerializeField] Slider slider;
     // Start is called before the first frame update
     void Start()
     {
         player.controllPlayer = true;
+        ChangeSensibility();
         //player.controller.enabled = true;
         //player.otherPlayer.controller.enabled = false;
+    }
+
+    public void ChangeSensibility()
+    {
+        camera_1.sensibilidad = slider.value * 4;
+        camera_2.sensibilidad = slider.value * 4;
     }
 
     // Update is called once per frame

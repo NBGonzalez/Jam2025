@@ -26,7 +26,8 @@ public class Item
         List,
         CrowBar,
         Casette,
-        Cake
+        Cake,
+        Ingredients
     }
 
     public ItemInteract itemInteract;

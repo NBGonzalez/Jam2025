@@ -10,6 +10,7 @@ public class Casette : MonoBehaviour
     public Dialogo chargeDialogue;
     public Dialogo pastDialogue;
     public Dialogo wrongDialogue;
+    public AudioSource AudioSource;
 
     private static Casette instance;
 
@@ -34,7 +35,9 @@ public class Casette : MonoBehaviour
     {
         if (charge)
         {
-            chargeDialogue.StartConversation();
+            if (DialogueManager.Instance.lastDialogue) return;
+            chargeDialogue.StartLastConversation();
+            AudioSource.Play();
         }
 
         else
