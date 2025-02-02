@@ -20837,7 +20837,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 932165042}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4100289393855196710, guid: 7e082d2676e96724ea18257713ea8657,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1047308442}
   m_SourcePrefab: {fileID: 100100000, guid: 7e082d2676e96724ea18257713ea8657, type: 3}
 --- !u!224 &685571580 stripped
 RectTransform:
@@ -28396,6 +28400,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1884287426}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1047308438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4100289393855196710, guid: 7e082d2676e96724ea18257713ea8657,
+    type: 3}
+  m_PrefabInstance: {fileID: 685571579}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1047308442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047308438}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952c6bd71386d1141af3e2cde95399e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ambientSound: {fileID: 0}
+  ambientMixer: {fileID: 0}
+  soundEffect: {fileID: 0}
+  effectMixer: {fileID: 0}
+  sensibility: {fileID: 0}
 --- !u!1001 &1050457574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45535,12 +45562,15 @@ PrefabInstance:
     - target: {fileID: 7657392273610406431, guid: 3266a0208f102f84dafb664a2a8e9379,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9000444002753702241, guid: 3266a0208f102f84dafb664a2a8e9379,
         type: 3}
       propertyPath: m_text
-      value: 
+      value: "Friday, May 13th, 2015 (My daughter's birthday) \r\n\nIs going to be
+        the best birthday ever, I have everything planned. \r\nAfter we wake up,
+        we are going to have breakfast, later on, while my wife takes the CAR to
+        do the shopping, I will be with my daughter playing on the BACKYARD.\r "
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
