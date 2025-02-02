@@ -7,6 +7,8 @@ public class MouseParralax : MonoBehaviour
     [SerializeField] private GameObject[] ParallaxElements;
     [SerializeField] private float MouseSpeedX = 1f;
     [SerializeField] private float MouseSpeedY = 0.2f;
+    [SerializeField] private float MouseSpeedX2 = 1f;
+    [SerializeField] private float MouseSpeedY2 = 0.2f;
     private Vector3[] OriginalPositions;
 
     [SerializeField] Camera mainCamera;
@@ -28,11 +30,14 @@ public class MouseParralax : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float mousex, mousey;
+        float mousex, mousey, mousex2, mousey2;
 
         // Better result across different screen sizes
         mousex = (Input.mousePosition.x - (Screen.width/2)) * MouseSpeedX/Screen.width; 
         mousey = (Input.mousePosition.y - (Screen.width/2)) * MouseSpeedY/Screen.width;
+
+        mousex2 = (Input.mousePosition.x - (Screen.width / 2)) * MouseSpeedX2 / Screen.width;
+        mousey2 = (Input.mousePosition.y - (Screen.width / 2)) * MouseSpeedY2 / Screen.width;
 
         for ( int i = 1;i< ParallaxElements.Length +1; i++)
         {
@@ -40,7 +45,7 @@ public class MouseParralax : MonoBehaviour
             // set position with corresponding offset
         }
 
-        mainCamera.transform.position = OriginalPositionCamera + (new Vector3(mousex, mousey, 0f));
+        mainCamera.transform.position = OriginalPositionCamera + (new Vector3(mousex2, mousey2, 0f));
 
     }
 
