@@ -16,7 +16,7 @@ public class ColorCode : MonoBehaviour
     void Start()
     {
         code = "";
-        answer = "123";
+        answer = "143";
 
         for (int i = 0; i < display.Length; i++)
         {

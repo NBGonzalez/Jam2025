@@ -16,7 +16,7 @@ public class NumCode : MonoBehaviour
     void Start()
     {
         code = "";
-        answer = "1234";
+        answer = "0325";
 
         for(int i = 0; i < display.Length; i++)
         {
