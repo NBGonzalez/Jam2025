@@ -24450,6 +24450,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: optionsIngame
       objectReference: {fileID: 0}
+    - target: {fileID: 2931988021308651485, guid: 94d5270a3b0718942870b250df47903a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931988021308651485, guid: 94d5270a3b0718942870b250df47903a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1215925542}
+    - target: {fileID: 2931988021308651485, guid: 94d5270a3b0718942870b250df47903a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3514113594059755452, guid: 94d5270a3b0718942870b250df47903a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
