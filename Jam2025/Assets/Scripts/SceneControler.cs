@@ -10,15 +10,26 @@ public class NewBehaviourScript : MonoBehaviour
 
     [SerializeField] private bool isCinematic;
     [SerializeField] private bool isLastCinematic;
+    private bool enter;
+    private bool enter2;
+
+    private void Start()
+    {
+        enter = false; 
+        enter2 = false; 
+    }
 
     private void Update()
     {
-        if (isCinematic && Input.GetKey(KeyCode.Space))
+        if (isCinematic && Input.GetKey(KeyCode.Space ) && enter == false)
         {
+            enter = true;
             loadGame2();
+            
         }
-        else if (isLastCinematic && Input.GetKey(KeyCode.Space))
+        else if (isLastCinematic && Input.GetKey(KeyCode.Space) && enter2 == false)
         {
+            enter2 = true;
             loadMenu();
         }
     }
@@ -30,8 +41,10 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void loadMenu()
     {
-        TransitionManager.Instance.LoadScene(TransitionManager.SCENE_MAIN_MENU);
+        Time.timeScale = 1.0f;
+        TransitionManager.Instance.loadMenu();
     }
+
 
     public void loadGame2()
     {
