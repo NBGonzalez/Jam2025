@@ -6,6 +6,7 @@ public class Ingredients : MonoBehaviour
 {
     public Item.ItemInteract ItemInteract;
     public string[] sentences;
+    public int num = 0;
 
     public void Interaction()
     {
@@ -14,7 +15,12 @@ public class Ingredients : MonoBehaviour
         {
             if (gameManager.Instance.inputManager.player.currentInteractable.typeOfItem == ItemInteract)
             {
-                gameManager.Instance.inputManager.player.currentInteractable.Interact();
+                num++;
+                if (num >= 3)
+                {
+                    gameManager.Instance.inputManager.player.currentInteractable.Interact();
+                }
+                
                 gameManager.Instance.inventory.RemoveItem(gameManager.Instance.currentItem);
             }
 

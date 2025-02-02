@@ -111,6 +111,11 @@ public class Interactable : MonoBehaviour
         //gameObject.SetActive(false);
     }
 
+    public void Unlock()
+    {
+        itemInteract = false;
+    }
+
     public void Dialogue()
     {
         DialogueManager.StartDialogue(sentences);
