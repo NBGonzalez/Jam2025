@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -16,7 +17,9 @@ public class Options : MonoBehaviour
     void Start()
     {
         ambientSound.value = PlayerPrefs.GetFloat("VolumeAmbient");
+        ambientMixer.SetFloat("VolumeAmbient", PlayerPrefs.GetFloat("VolumeAmbient"));
         soundEffect.value = PlayerPrefs.GetFloat("VolumeEffect");
+        effectMixer.SetFloat("VolumeEffect", PlayerPrefs.GetFloat("VolumeEffect"));
         sensibility.value = PlayerPrefs.GetFloat("Sensibility");
     }
 
