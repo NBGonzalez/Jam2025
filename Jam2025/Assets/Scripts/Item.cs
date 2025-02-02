@@ -24,7 +24,8 @@ public class Item
         Key,
         Card,
         List,
-        CrowBar
+        CrowBar,
+        Casette
     }
 
     public ItemInteract itemInteract;
