@@ -16,6 +16,8 @@ public class InputManager : MonoBehaviour
     public float wheeltimer = 0.5f;
     public Dialogo cantTravel;
     [SerializeField] Slider slider;
+    private bool open = false;
+    [SerializeField] private GameObject book;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,11 @@ public class InputManager : MonoBehaviour
     {
         timer += Time.deltaTime;
         wheeltimer += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ChangeTab();
+        }
         if (Input.GetButtonDown("Fire2") && timer >= 1f)
         {
 
@@ -93,6 +100,28 @@ public class InputManager : MonoBehaviour
             wheeltimer = 0f;
             gameManager.Instance.inventory.ChangeCurrentItem(gameManager.Instance.currentItem, -1);
 
+        }
+    }
+
+    public void ChangeTab()
+    {
+        open = !open;
+        if (open)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+            gameManager.Instance.canTravel = false;
+            book.SetActive(true);
+            Time.timeScale = 0;
+        }
+
+        else
+        {
+            Time.timeScale = 1;
+            Cursor.visible = false;
+            Cursor.lockState= CursorLockMode.Locked;
+            gameManager.Instance.canTravel = true;
+            book.SetActive(false);
         }
     }
 }

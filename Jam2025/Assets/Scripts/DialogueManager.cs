@@ -137,6 +137,8 @@ public class DialogueManager : MonoBehaviour
 
     public void ChangeCinematic()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
         TransitionManager.Instance.LoadScene(TransitionManager.SCENE_LASTCINEMATIC);
     }
 }

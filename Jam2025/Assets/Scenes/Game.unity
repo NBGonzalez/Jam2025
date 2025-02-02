@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01643892, g: 0.014723634, b: 0.014220452, a: 1}
+  m_IndirectSpecularColor: {r: 0.01643892, g: 0.014723633, b: 0.014220452, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2473,7 +2473,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cd61b41edb8b43e4a911f93dd29419b3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 65921400}
   m_SourcePrefab: {fileID: 100100000, guid: cd61b41edb8b43e4a911f93dd29419b3, type: 3}
 --- !u!1 &65921399 stripped
 GameObject:
@@ -2481,6 +2485,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 65921398}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &65921400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65921399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e3977df0d7444abc7dec4c92640b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - Great, I'm going to take it to the kitchen
+  - and mix the ingredients to make the cake for my daughter.
 --- !u!1 &68455135 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 75261830f4cc72740829b2d4708d7c6b,
@@ -4973,6 +4992,7 @@ GameObject:
   - component: {fileID: 181410750}
   - component: {fileID: 181410749}
   - component: {fileID: 181410748}
+  - component: {fileID: 181410751}
   m_Layer: 0
   m_Name: Tarjeta (3)
   m_TagString: Untagged
@@ -5045,6 +5065,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &181410751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181410746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e3977df0d7444abc7dec4c92640b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - I think I can use this card to open a door.
 --- !u!1001 &182812919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5774,6 +5808,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 65921400}
+        m_TargetAssemblyTypeName: Dialogo, Assembly-CSharp
+        m_MethodName: StartConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onWrongInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -6469,7 +6515,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2439f5390c317f64183b24920f40f913,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1992753232}
   m_SourcePrefab: {fileID: 100100000, guid: 2439f5390c317f64183b24920f40f913, type: 3}
 --- !u!4 &247364626 stripped
 Transform:
@@ -9810,6 +9860,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1385437669}
+        m_TargetAssemblyTypeName: Dialogo, Assembly-CSharp
+        m_MethodName: StartConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onWrongInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -10018,6 +10080,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19682540d8a014522a319b1cf788aee2, type: 3}
+--- !u!1 &416977695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1559774780990899360, guid: 3266a0208f102f84dafb664a2a8e9379,
+    type: 3}
+  m_PrefabInstance: {fileID: 1840552473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &418965914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20764,33 +20832,38 @@ PrefabInstance:
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
       propertyPath: Sentences.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
       propertyPath: Sentences.Array.data[0]
-      value: Finally, I am back home. (PRESS SPACE TO CONTINUE THE DIALOGUE)
+      value: YOU CAN READ THE STORY PRESSING TAB (PRESS SPACE TO CONTINUE THE DIALOGUE)
       objectReference: {fileID: 0}
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
       propertyPath: Sentences.Array.data[1]
-      value: I have to find out how my daughter died 8 years ago.
+      value: Finally, I am back home.
       objectReference: {fileID: 0}
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
       propertyPath: Sentences.Array.data[2]
+      value: I have to find out how my daughter died 8 years ago.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
+        type: 3}
+      propertyPath: Sentences.Array.data[3]
       value: Since then I have been making a machine that allows me to travel in
         time, but only 8 years ago at the same time.
       objectReference: {fileID: 0}
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
-      propertyPath: Sentences.Array.data[3]
+      propertyPath: Sentences.Array.data[4]
       value: I can interact with the environment, but I cannot see any entities in
         the past.
       objectReference: {fileID: 0}
     - target: {fileID: 5409525581368430571, guid: 7e082d2676e96724ea18257713ea8657,
         type: 3}
-      propertyPath: Sentences.Array.data[4]
+      propertyPath: Sentences.Array.data[5]
       value: ' I should start by entering the house (PRESS RIGHT MOUSE BUTTON TO
         TRAVEL TIME)'
       objectReference: {fileID: 0}
@@ -28209,6 +28282,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5096411061335264651, guid: 393df4ac832191f4c9992e7f97abbf08,
         type: 3}
+      propertyPath: book
+      value: 
+      objectReference: {fileID: 416977695}
+    - target: {fileID: 5096411061335264651, guid: 393df4ac832191f4c9992e7f97abbf08,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1554548639857881261}
@@ -35572,6 +35650,52 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1385437668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1385437670}
+  - component: {fileID: 1385437669}
+  m_Layer: 0
+  m_Name: Battery Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1385437669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385437668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e3977df0d7444abc7dec4c92640b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - Great, now I can load the cassette
+--- !u!4 &1385437670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1385437668}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1002.606, y: 10.451, z: 4.276}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1385834641
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36097,6 +36221,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1399784727}
         m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
         m_MethodName: AddItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 181410751}
+        m_TargetAssemblyTypeName: Dialogo, Assembly-CSharp
+        m_MethodName: StartConversation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43438,6 +43574,123 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1001 &1749649692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_Name
+      value: SkyDome (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 13.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.77971023
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.55637735
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.17498694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.22776267
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -71.323
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 3.479
+      objectReference: {fileID: 0}
+    - target: {fileID: 400008, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 30.071
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 20.669998
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 20.669998
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 20.669998
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1106
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -52
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8809d7574d515d4ba3ca1bb23077ccc, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d0223f77114284b47a0e8b317e71e4dc, type: 3}
 --- !u!1001 &1751243001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52514,6 +52767,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1992753232}
+        m_TargetAssemblyTypeName: Dialogo, Assembly-CSharp
+        m_MethodName: StartConversation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onWrongInteraction:
     m_PersistentCalls:
       m_Calls: []
@@ -57917,6 +58182,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 245471133}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992753232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992753231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e3977df0d7444abc7dec4c92640b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sentences:
+  - ' should leave the list in the car'
+  - So my wife can go buy the ingredients later.
 --- !u!1001 &2010867413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61954,6 +62234,7 @@ SceneRoots:
   - {fileID: 1406438166}
   - {fileID: 2010867413}
   - {fileID: 1146675813}
+  - {fileID: 1749649692}
   - {fileID: 1009983015}
   - {fileID: 140869701}
   - {fileID: 108480851}
@@ -61984,6 +62265,7 @@ SceneRoots:
   - {fileID: 381065505}
   - {fileID: 1961054787}
   - {fileID: 65921398}
+  - {fileID: 1385437670}
   - {fileID: 388626856}
   - {fileID: 1461743393}
   - {fileID: 41597532}
