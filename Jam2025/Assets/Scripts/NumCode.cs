@@ -10,6 +10,7 @@ public class NumCode : MonoBehaviour
     private string code;
     private string answer;
     [SerializeField] private GameObject code_GameObject;
+    [SerializeField] private GameObject answer_GameObject;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +41,8 @@ public class NumCode : MonoBehaviour
             {
                 Debug.Log("Correct");
                 //Desactivate();
-                Invoke("Desactivate", 0.5f);
+                Invoke("Win", 0.5f);
+                //Invoke("Desactivate", 0.5f);
             }
             else
             {
@@ -102,19 +104,30 @@ public class NumCode : MonoBehaviour
 
     public void Activate()
     {
+        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         gameManager.Instance.canTravel = false;
         gameManager.Instance.inputManager.player.controller.enabled = false;
         gameManager.Instance.inputManager.player.camara.GetComponent<PlayerCamera>().enabled = false;
+        gameManager.Instance.inputManager.player.otherPlayer.camara.GetComponent<PlayerCamera>().enabled = false;
     }
 
     public void Desactivate()
     {
         Reset();
+        Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         gameManager.Instance.inputManager.player.camara.GetComponent<PlayerCamera>().enabled = true;
+        gameManager.Instance.inputManager.player.otherPlayer.camara.GetComponent<PlayerCamera>().enabled = true;
         gameManager.Instance.canTravel = true;
         gameManager.Instance.inputManager.player.controller.enabled = true;
         code_GameObject.SetActive(false);
+    }
+
+    public void Win()
+    {
+        answer_GameObject.GetComponent<Door>().OpenClose();
+        answer_GameObject.GetComponent<Interactable>().onInteraction = null;
+        Desactivate();
     }
 }
