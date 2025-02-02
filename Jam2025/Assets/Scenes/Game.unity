@@ -2965,7 +2965,7 @@ MonoBehaviour:
   itemPos: {x: 0, y: 0, z: 0}
   itemRot: {x: 0, y: 0, z: 0, w: 0}
   itemScale: {x: 0, y: 0, z: 0}
-  itemInteract: 0
+  itemInteract: 1
   itemTransform: 0
   t: {fileID: 0}
   typeOfItem: 0
@@ -2977,7 +2977,10 @@ MonoBehaviour:
       m_Calls: []
   pastSprite: {fileID: 0}
   presentSprite: {fileID: 0}
-  sentences: []
+  sentences:
+  - My daughter's room is closed
+  - She always kept it closed
+  - She loves cakes, I'm sure if I make one she will come to see me
   otherInteractable: {fileID: 647360146}
   onInteraction:
     m_PersistentCalls:
@@ -6264,6 +6267,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a1072450aaabcd144a11e357c39ca866, type: 2}
+    - target: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+        type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 5084650630254464064, guid: f37b553526cdd904585ae55be3727df9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6289,6 +6297,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a1072450aaabcd144a11e357c39ca866, type: 2}
+    - target: {fileID: 7018405445734138080, guid: f37b553526cdd904585ae55be3727df9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7821069061737290672, guid: f37b553526cdd904585ae55be3727df9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6297,7 +6310,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181374926}
   m_SourcePrefab: {fileID: 100100000, guid: f37b553526cdd904585ae55be3727df9, type: 3}
 --- !u!4 &276709292 stripped
 Transform:
@@ -17652,6 +17669,64 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1951956011}
   m_SourcePrefab: {fileID: 100100000, guid: 2439f5390c317f64183b24920f40f913, type: 3}
+--- !u!1 &628397941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+    type: 3}
+  m_PrefabInstance: {fileID: 766484604}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &628397943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628397941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63eb1e2252621b4e945333abd0c00b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 
+  itemName: 
+  pastPrefab: {fileID: 0}
+  presentPrefab: {fileID: 0}
+  itemPos: {x: 0, y: 0, z: 0}
+  itemRot: {x: 0, y: 0, z: 0, w: 0}
+  itemScale: {x: 0, y: 0, z: 0}
+  itemInteract: 1
+  itemTransform: 0
+  t: {fileID: 0}
+  typeOfItem: 5
+  onInteractionPast:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractionPresent:
+    m_PersistentCalls:
+      m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
+  sentences:
+  - I have nothing to do here
+  otherInteractable: {fileID: 0}
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  onWrongInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 628397943}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: Dialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &633957451
 GameObject:
   m_ObjectHideFlags: 0
@@ -17760,7 +17835,7 @@ MonoBehaviour:
   itemPos: {x: 0, y: 0, z: 0}
   itemRot: {x: 0, y: 0, z: 0, w: 0}
   itemScale: {x: 0, y: 0, z: 0}
-  itemInteract: 0
+  itemInteract: 1
   itemTransform: 0
   t: {fileID: 0}
   typeOfItem: 0
@@ -17772,7 +17847,10 @@ MonoBehaviour:
       m_Calls: []
   pastSprite: {fileID: 0}
   presentSprite: {fileID: 0}
-  sentences: []
+  sentences:
+  - My daughter's room is closed
+  - She always kept it closed
+  - She loves cakes, I'm sure if I make one she will come to see me
   otherInteractable: {fileID: 132530932}
   onInteraction:
     m_PersistentCalls:
@@ -20064,6 +20142,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ce725bdc0f6526648b3b8e2a3295d5ac, type: 2}
+    - target: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+        type: 3}
+      propertyPath: m_TagString
+      value: interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 5084650630254464064, guid: f37b553526cdd904585ae55be3727df9,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -20097,7 +20180,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 628397943}
   m_SourcePrefab: {fileID: 100100000, guid: f37b553526cdd904585ae55be3727df9, type: 3}
 --- !u!4 &766484605 stripped
 Transform:
@@ -28006,6 +28093,64 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 317376375}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1181374924 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4564622116203381798, guid: f37b553526cdd904585ae55be3727df9,
+    type: 3}
+  m_PrefabInstance: {fileID: 276709291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1181374926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181374924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63eb1e2252621b4e945333abd0c00b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  message: 
+  itemName: 
+  pastPrefab: {fileID: 0}
+  presentPrefab: {fileID: 0}
+  itemPos: {x: 0, y: 0, z: 0}
+  itemRot: {x: 0, y: 0, z: 0, w: 0}
+  itemScale: {x: 0, y: 0, z: 0}
+  itemInteract: 1
+  itemTransform: 0
+  t: {fileID: 0}
+  typeOfItem: 5
+  onInteractionPast:
+    m_PersistentCalls:
+      m_Calls: []
+  onInteractionPresent:
+    m_PersistentCalls:
+      m_Calls: []
+  pastSprite: {fileID: 0}
+  presentSprite: {fileID: 0}
+  sentences:
+  - I have nothing to do here
+  otherInteractable: {fileID: 0}
+  onInteraction:
+    m_PersistentCalls:
+      m_Calls: []
+  onWrongInteraction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1181374926}
+        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
+        m_MethodName: Dialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1185838852 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 471828, guid: 19682540d8a014522a319b1cf788aee2,
@@ -56389,7 +56534,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1233294570668926966
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -56791,7 +56936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8096357028599840963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56883,7 +57028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &9068091707123649287
 MonoBehaviour:
   m_ObjectHideFlags: 0
