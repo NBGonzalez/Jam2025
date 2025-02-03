@@ -1708,8 +1708,10 @@ MonoBehaviour:
     House Texturing\nN\xE9stor Bermejillo Gonz\xE1lez and Agust\xEDn Scandolo Robledo\n\n\n\n\nObject
     Modeling and Texturing\nN\xE9stor Bermejillo Gonz\xE1lez\n\n\n\n\nTerrain Design\nDavid
     Lozano Varona\n\n\n\n\nModeling Asylum Room\nAgust\xEDn Scandolo Robledo\n\n\n\nCinematic
-    Road\nAsset Store -  JustCreate\n\n\n\n\nMain Car Modeling\nAsset Store - Ezereal\n\n\n\n\nCharacter
-    Modeling\nAsset Store - \u2026..\n\n\n\n\nSounds\nPixabay\n"
+    Road\nAsset Store -  JustCreate\n\n\n\n\nMain Car Modeling\nAsset Store - Ezereal\n\n\n\n\nTrees
+    \nAsset Store - Ada_King\n\n\n\n\nCharacter Modeling\nPoly.pizza - Quaternius\n\n\n\n\nSimple
+    Sky\nAsset Store - Synty Studios\n\n\n\n\nDirt Texture - freepik\n\n\n\n\nSounds\nPixabay
+    and soundjay\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2363,7 +2365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -3631}
+  m_AnchoredPosition: {x: 2, y: -4178}
   m_SizeDelta: {x: 1319.9783, y: 742.4878}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216922768

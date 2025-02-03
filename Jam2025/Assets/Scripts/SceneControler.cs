@@ -15,6 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Start()
     {
+
         enter = false; 
         enter2 = false; 
     }
