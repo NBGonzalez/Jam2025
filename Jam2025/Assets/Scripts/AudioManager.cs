@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
@@ -15,7 +16,8 @@ public enum SoundType
     Keys,
     FootStep,
     Push,
-    Nails
+    Nails,
+    Button
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
@@ -47,6 +49,13 @@ public class AudioManager : MonoBehaviour
     public void Play(SoundType sound)
     {
         AudioClip[] clips = soundList[(int)sound].Sounds;
+        AudioClip randomClip = clips[Random.Range(0, clips.Length)];
+        audioSource.PlayOneShot(randomClip, 1);
+    }
+
+    public void ButtonSound()
+    {
+        AudioClip[] clips = soundList[(int)SoundType.Button].Sounds;
         AudioClip randomClip = clips[Random.Range(0, clips.Length)];
         audioSource.PlayOneShot(randomClip, 1);
     }
