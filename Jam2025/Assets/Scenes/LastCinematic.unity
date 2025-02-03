@@ -372,6 +372,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCinematic: 0
   isLastCinematic: 1
+  ambientMixer: {fileID: 24100000, guid: daaed087c00a3e743b6f0fe1d31f4a58, type: 2}
+  effectMixer: {fileID: 24100000, guid: 1e0ba4eef08d6fc4e825401ce573a15d, type: 2}
 --- !u!1 &310813125 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7515891428372158619, guid: bd2f74d1ebe19714eab073445f8f9f01,

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 public class NewBehaviourScript : MonoBehaviour
@@ -12,10 +13,17 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private bool isLastCinematic;
     private bool enter;
     private bool enter2;
+    [SerializeField] private AudioMixer ambientMixer;
+    [SerializeField] private AudioMixer effectMixer;
 
     private void Start()
     {
-
+        if (!isLastCinematic && !isCinematic)
+        {
+            ambientMixer.SetFloat("VolumeAmbient", PlayerPrefs.GetFloat("VolumeAmbient"));
+            effectMixer.SetFloat("VolumeEffect", PlayerPrefs.GetFloat("VolumeEffect"));
+        }
+        
         enter = false; 
         enter2 = false; 
     }

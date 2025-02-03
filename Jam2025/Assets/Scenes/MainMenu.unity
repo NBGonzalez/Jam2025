@@ -15107,7 +15107,6 @@ GameObject:
   - component: {fileID: 686376363}
   - component: {fileID: 686376362}
   - component: {fileID: 686376366}
-  - component: {fileID: 686376367}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -15213,23 +15212,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isCinematic: 0
   isLastCinematic: 0
---- !u!114 &686376367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 686376361}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952c6bd71386d1141af3e2cde95399e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ambientSound: {fileID: 0}
-  ambientMixer: {fileID: 0}
-  soundEffect: {fileID: 0}
-  effectMixer: {fileID: 0}
-  sensibility: {fileID: 0}
+  ambientMixer: {fileID: 24100000, guid: daaed087c00a3e743b6f0fe1d31f4a58, type: 2}
+  effectMixer: {fileID: 24100000, guid: 1e0ba4eef08d6fc4e825401ce573a15d, type: 2}
 --- !u!1001 &697746297
 PrefabInstance:
   m_ObjectHideFlags: 0
