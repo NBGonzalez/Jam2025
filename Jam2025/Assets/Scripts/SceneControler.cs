@@ -71,4 +71,9 @@ public class NewBehaviourScript : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1.0f;
     }
+
+    public void exit()
+    {
+        Application.Quit();
+    }
 }
